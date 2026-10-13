@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta corporativa -->
+    <color name="primario">#FF2E6B8A</color>
+    <color name="primario_oscuro">#FF24566F</color>
+    <color name="primario_claro">#FFDCEAF1</color>
+    <color name="fondo">#FFF4F6F8</color>
+    <color name="superficie">#FFFFFFFF</color>
+    <color name="superficie_alterna">#FFEEF2F5</color>
+    <color name="texto_principal">#FF1F2A33</color>
+    <color name="texto_secundario">#FF5E6B77</color>
+    <color name="borde">#FFE1E7EC</color>
+    <color name="contorno">#FFC5D0D9</color>
+    <color name="blanco_suave">#CCFFFFFF</color>
+
+    <!-- Estados operativos -->
+    <color name="estado_pendiente">#FFD39B2A</color>
+    <color name="estado_en_ruta">#FF2E6B8A</color>
+    <color name="estado_en_camino">#FF6A5ACD</color>
+    <color name="estado_entregado">#FF2E8B57</color>
+    <color name="estado_visita_fallida">#FFD64545</color>
+    <color name="estado_no_visitado">#FF7A8794</color>
 </resources>

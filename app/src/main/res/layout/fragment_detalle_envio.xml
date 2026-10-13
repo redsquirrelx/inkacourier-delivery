@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/contenido"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Encabezado -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/franjaEstado"
+                        android:layout_width="6dp"
+                        android:layout_height="match_parent" />
+
+                    <LinearLayout
+                        style="@style/ContenidoTarjeta"
+                        android:layout_width="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/textoCodigo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceTitleLarge"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textoEstado"
+                            style="@style/InsigniaEstado"
+                            android:layout_marginTop="8dp" />
+
+                        <TextView
+                            android:id="@+id/textoEmpresa"
+                            style="@style/FilaIcono"
+                            android:layout_marginTop="10dp"
+                            app:drawableStartCompat="@drawable/ic_empresa" />
+
+                        <TextView
+                            android:id="@+id/textoUltimaActualizacion"
+                            style="@style/FilaIcono"
+                            app:drawableStartCompat="@drawable/ic_reloj"
+                            android:textAppearance="?attr/textAppearanceBodySmall"
+                            android:textColor="@color/texto_secundario" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Destinatario y dirección -->
+            <com.google.android.material.card.MaterialCardView style="@style/TarjetaSeccion">
+
+                <LinearLayout style="@style/ContenidoTarjeta">
+
+                    <TextView
+                        style="@style/TextoSeccion"
+                        app:drawableStartCompat="@drawable/ic_persona"
+                        android:text="@string/seccion_destinatario" />
+
+                    <TextView
+                        android:id="@+id/textoDestinatario"
+                        style="@style/TextoValor"
+                        android:layout_marginTop="10dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <TextView
+                        android:id="@+id/textoDocumento"
+                        style="@style/FilaIcono"
+                        app:drawableStartCompat="@drawable/ic_documento" />
+
+                    <TextView
+                        android:id="@+id/textoTelefono"
+                        style="@style/FilaIcono"
+                        android:background="?attr/selectableItemBackground"
+                        android:contentDescription="@string/descripcion_llamar"
+                        app:drawableStartCompat="@drawable/ic_telefono"
+                        android:paddingVertical="4dp"
+                        android:textColor="@color/primario"
+                        app:drawableTint="@color/primario" />
+
+                    <TextView
+                        android:id="@+id/textoDireccion"
+                        style="@style/FilaIcono"
+                        app:drawableStartCompat="@drawable/ic_ubicacion" />
+
+                    <TextView
+                        android:id="@+id/textoReferencias"
+                        style="@style/TextoSecundario"
+                        android:layout_marginTop="2dp"
+                        android:paddingStart="28dp"
+                        android:paddingEnd="0dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Datos de entrega -->
+            <com.google.android.material.card.MaterialCardView style="@style/TarjetaSeccion">
+
+                <LinearLayout style="@style/ContenidoTarjeta">
+
+                    <TextView
+                        style="@style/TextoSeccion"
+                        app:drawableStartCompat="@drawable/ic_paquete"
+                        android:text="@string/seccion_entrega" />
+
+                    <TextView
+                        android:id="@+id/textoHorario"
+                        style="@style/FilaIcono"
+                        android:layout_marginTop="10dp"
+                        app:drawableStartCompat="@drawable/ic_reloj" />
+
+                    <TextView
+                        android:id="@+id/textoPago"
+                        style="@style/FilaIcono"
+                        app:drawableStartCompat="@drawable/ic_pago" />
+
+                    <TextView
+                        style="@style/TextoSeccion"
+                        android:layout_marginTop="16dp"
+                        app:drawableStartCompat="@drawable/ic_informacion"
+                        android:text="@string/seccion_instrucciones" />
+
+                    <TextView
+                        android:id="@+id/textoInstrucciones"
+                        style="@style/TextoValor" />
+
+                    <TextView
+                        style="@style/TextoSeccion"
+                        android:layout_marginTop="16dp"
+                        app:drawableStartCompat="@drawable/ic_escudo"
+                        android:text="@string/seccion_autorizaciones" />
+
+                    <TextView
+                        android:id="@+id/textoAutorizaciones"
+                        style="@style/TextoValor"
+                        android:lineSpacingExtra="2dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Resultado (entrega, visita fallida o no visitado) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/grupoResultado"
+                style="@style/TarjetaSeccion"
+                android:visibility="gone">
+
+                <LinearLayout style="@style/ContenidoTarjeta">
+
+                    <TextView
+                        android:id="@+id/tituloResultado"
+                        style="@style/TextoSeccion"
+                        app:drawableStartCompat="@drawable/ic_completado"
+                        android:text="@string/seccion_resultado" />
+
+                    <TextView
+                        android:id="@+id/textoResultado"
+                        style="@style/TextoValor"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="2dp" />
+
+                    <TextView
+                        android:id="@+id/tituloFoto"
+                        style="@style/TextoSeccion"
+                        android:layout_marginTop="16dp"
+                        app:drawableStartCompat="@drawable/ic_camara"
+                        android:text="@string/seccion_foto" />
+
+                    <ImageView
+                        android:id="@+id/imagenFoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/fondo_recuadro"
+                        android:contentDescription="@string/seccion_foto"
+                        android:scaleType="fitCenter" />
+
+                    <TextView
+                        android:id="@+id/tituloFirma"
+                        style="@style/TextoSeccion"
+                        android:layout_marginTop="16dp"
+                        app:drawableStartCompat="@drawable/ic_firma"
+                        android:text="@string/seccion_firma" />
+
+                    <ImageView
+                        android:id="@+id/imagenFirma"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/fondo_recuadro"
+                        android:contentDescription="@string/seccion_firma"
+                        android:scaleType="fitCenter" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Historial -->
+            <com.google.android.material.card.MaterialCardView style="@style/TarjetaSeccion">
+
+                <LinearLayout style="@style/ContenidoTarjeta">
+
+                    <TextView
+                        style="@style/TextoSeccion"
+                        app:drawableStartCompat="@drawable/ic_historial"
+                        android:text="@string/seccion_historial" />
+
+                    <TextView
+                        android:id="@+id/textoHistorial"
+                        style="@style/TextoValor"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="6dp"
+                        android:textAppearance="?attr/textAppearanceBodySmall" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Acciones del repartidor -->
+            <LinearLayout
+                android:id="@+id/grupoAcciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botonIniciarTraslado"
+                    style="@style/BotonTonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/accion_iniciar_traslado"
+                    app:icon="@drawable/ic_navegar" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botonRegistrarEntrega"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/accion_registrar_entrega"
+                    app:icon="@drawable/ic_completado" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botonRegistrarVisitaFallida"
+                    style="@style/BotonPeligro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/accion_registrar_visita_fallida"
+                    app:icon="@drawable/ic_fallido" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/textoNoDisponible"
+        style="@style/TextoVacio"
+        android:text="@string/envio_no_disponible" />
+</FrameLayout>

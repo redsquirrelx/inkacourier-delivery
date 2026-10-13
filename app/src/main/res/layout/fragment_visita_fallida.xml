@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textoEnvio"
+            style="@style/TextoSeccion"
+            app:drawableStartCompat="@drawable/ic_paquete"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+        <TextView
+            android:id="@+id/textoFechaHora"
+            style="@style/FilaIcono"
+            app:drawableStartCompat="@drawable/ic_reloj"
+            android:textColor="@color/texto_secundario" />
+
+        <!-- Causa y observaciones -->
+        <com.google.android.material.card.MaterialCardView style="@style/TarjetaSeccion">
+
+            <LinearLayout style="@style/ContenidoTarjeta">
+
+                <TextView
+                    style="@style/TextoSeccion"
+                    app:drawableStartCompat="@drawable/ic_fallido"
+                    android:text="@string/seccion_causa" />
+
+                <RadioGroup
+                    android:id="@+id/grupoCausas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/causaAusente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/causaDireccion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/causaRechazo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/causaPago"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/hint_observaciones">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoObservaciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:inputType="textMultiLine|textCapSentences"
+                        android:minLines="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <include
+            android:id="@+id/evidencias"
+            layout="@layout/seccion_evidencias" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/accion_revisar_registro"
+            app:icon="@drawable/ic_completado" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
