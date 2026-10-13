@@ -1,3 +1,146 @@
 <resources>
     <string name="app_name">InkaCourier Delivery</string>
+    <string name="marca">InkaCourier</string>
+
+    <!-- Login -->
+    <string name="login_eslogan">Entregas y seguimiento de envíos</string>
+    <string name="login_titulo">Iniciar sesión</string>
+    <string name="login_subtitulo">Ingrese con su usuario o correo corporativo</string>
+    <string name="hint_usuario">Usuario o correo</string>
+    <string name="hint_contrasena">Contraseña</string>
+    <string name="accion_iniciar_sesion">Iniciar sesión</string>
+    <string name="demo_titulo">Credenciales de demostración</string>
+    <string name="demo_aviso">Autenticación simulada solo para demostración. No es un acceso seguro de producción.</string>
+    <string name="demo_credencial">%1$s · usuario: %2$s · contraseña: %3$s</string>
+    <string name="accion_usar">Usar</string>
+
+    <!-- Sesión y navegación -->
+    <string name="seccion_inicio">Inicio</string>
+    <string name="seccion_paradas">Paradas</string>
+    <string name="seccion_envios">Envíos</string>
+    <string name="accion_cerrar_sesion">Cerrar sesión</string>
+    <string name="confirmar_cierre_sesion">¿Desea cerrar su sesión?</string>
+    <string name="saludo">Hola, %1$s</string>
+
+    <!-- Inicio repartidor -->
+    <string name="inicio_repartidor_subtitulo">Ruta del día · %1$s</string>
+    <string name="avance_ruta">Avance de la ruta</string>
+    <string name="avance_ruta_detalle">%1$d de %2$d paradas atendidas</string>
+    <string name="indicador_por_atender">Por atender</string>
+    <string name="indicador_entregadas">Entregadas</string>
+    <string name="indicador_fallidas">Fallidas</string>
+    <string name="proxima_parada">Próxima parada</string>
+    <string name="sin_proxima_parada">No quedan paradas por atender. ¡Ruta completada!</string>
+    <string name="accesos">Accesos</string>
+    <string name="acceso_paradas">Mis paradas</string>
+    <string name="acceso_paradas_detalle">Todas las paradas asignadas a su ruta</string>
+    <string name="acceso_por_atender">Paradas por atender</string>
+    <string name="acceso_por_atender_detalle">Registre entregas o visitas fallidas desde el detalle</string>
+    <string name="acceso_atendidas">Paradas atendidas</string>
+    <string name="acceso_atendidas_detalle">Revise entregas y visitas fallidas registradas</string>
+
+    <!-- Inicio B2B -->
+    <string name="inicio_b2b_subtitulo">Seguimiento de envíos de su empresa</string>
+    <string name="resumen_envios">Resumen de envíos</string>
+    <string name="ultimas_actualizaciones">Últimas actualizaciones</string>
+    <string name="accion_ver_todos_envios">Ver todos los envíos</string>
+    <string name="sin_envios_recientes">Aún no hay envíos registrados.</string>
+
+    <!-- HU-01 -->
+    <string name="titulo_paradas">Mis paradas</string>
+    <string name="resumen_paradas">%1$d por atender · %2$d atendidas</string>
+    <string name="filtro_por_atender">Por atender</string>
+    <string name="filtro_atendidas">Atendidas</string>
+    <string name="filtro_todas">Todas</string>
+    <string name="paradas_vacias_por_atender">No hay paradas por atender. ¡Ruta completada!</string>
+    <string name="paradas_vacias_atendidas">Aún no hay paradas atendidas.</string>
+    <string name="paradas_vacias_todas">No tiene paradas asignadas.</string>
+    <string name="actualizado_por_oficina">Actualizado por oficina</string>
+    <string name="titulo_detalle_parada">Detalle de parada</string>
+    <string name="formato_parada">Parada %1$d · %2$s</string>
+    <string name="formato_direccion">%1$s - %2$s</string>
+    <string name="formato_ultima_actualizacion">Actualizado: %1$s</string>
+
+    <!-- Detalle -->
+    <string name="seccion_destinatario">Destinatario</string>
+    <string name="seccion_entrega">Datos de entrega</string>
+    <string name="seccion_instrucciones">Instrucciones de oficina</string>
+    <string name="seccion_autorizaciones">Autorizaciones de oficina</string>
+    <string name="seccion_resultado">Resultado de la visita</string>
+    <string name="seccion_historial">Historial de estados y cambios</string>
+    <string name="seccion_foto">Fotografía</string>
+    <string name="seccion_firma">Firma del receptor</string>
+    <string name="formato_documento">%1$s: %2$s</string>
+    <string name="formato_referencias">Ref.: %1$s</string>
+    <string name="formato_horario">Horario de atención: %1$s</string>
+    <string name="formato_evento">%1$s  %2$s</string>
+    <string name="formato_evento_oficina">%1$s  ● %2$s</string>
+    <string name="pago_prepagado">%1$s · Prepagado</string>
+    <string name="pago_verificado">%1$s · Contra entrega (pago verificado por oficina)</string>
+    <string name="pago_no_verificado">%1$s · Contra entrega (pago NO verificado)</string>
+    <string name="autorizacion_zona_riesgo">Zona de alto riesgo: se autoriza omitir la fotografía con justificación</string>
+    <string name="autorizacion_foto_obligatoria">Fotografía obligatoria</string>
+    <string name="autorizacion_sin_terceros">Sin terceros autorizados: solo recibe el titular</string>
+    <string name="autorizacion_terceros">Terceros autorizados: %1$s</string>
+    <string name="formato_autorizado">%1$s (%2$s %3$s)</string>
+    <string name="resultado_entrega">Entregado el %1$s\nReceptor (%2$s): %3$s\n%4$s: %5$s</string>
+    <string name="resultado_visita">Visita fallida: %1$s\nIntento: %2$s\nObservaciones: %3$s</string>
+    <string name="resultado_entregado_simple">Entregado el %1$s</string>
+    <string name="resultado_no_visitado">Parada no visitada: el repartidor no llegó a la dirección, por lo que no hubo intento de entrega ni evidencias. A diferencia de una visita fallida, no se registró causa.</string>
+    <string name="resultado_gps">GPS: %1$s</string>
+    <string name="resultado_sin_foto_riesgo">Fotografía omitida (zona de alto riesgo): %1$s</string>
+    <string name="resultado_sin_foto_insegura">Fotografía omitida (zona insegura): %1$s</string>
+    <string name="accion_iniciar_traslado">Iniciar traslado</string>
+    <string name="accion_registrar_entrega">Registrar entrega</string>
+    <string name="accion_entrega_bloqueada">Entrega bloqueada: pago no verificado</string>
+    <string name="accion_registrar_visita_fallida">Registrar visita fallida</string>
+    <string name="envio_no_disponible">El envío no existe o no pertenece a su perfil.</string>
+    <string name="descripcion_llamar">Toque para llamar</string>
+    <string name="sin_aplicacion_telefono">No hay una aplicación de teléfono disponible</string>
+
+    <!-- HU-03 / HU-05 -->
+    <string name="titulo_registro_entrega">Registrar entrega</string>
+    <string name="titulo_visita_fallida">Registrar visita fallida</string>
+    <string name="formato_separado">%1$s · %2$s</string>
+    <string name="seccion_receptor">Receptor</string>
+    <string name="receptor_titular">Titular</string>
+    <string name="receptor_tercero">Tercero autorizado</string>
+    <string name="autorizados_ninguno">Oficina no autorizó terceros: solo puede recibir el titular.</string>
+    <string name="autorizados_lista">Terceros autorizados por oficina: %1$s</string>
+    <string name="documento_dni">DNI</string>
+    <string name="documento_ce">C. extranjería</string>
+    <string name="hint_numero_documento">Número de documento</string>
+    <string name="hint_nombre_receptor">Nombre completo del receptor</string>
+    <string name="firma_instruccion">Solicite al receptor que firme dentro del recuadro</string>
+    <string name="accion_limpiar_firma">Limpiar firma</string>
+    <string name="seccion_causa">Causa de la visita fallida</string>
+    <string name="hint_observaciones">Observaciones</string>
+    <string name="fecha_intento">Fecha y hora del intento: %1$s</string>
+    <string name="seccion_evidencias">Evidencias</string>
+    <string name="accion_tomar_foto">Tomar fotografía</string>
+    <string name="accion_repetir_foto">Repetir fotografía</string>
+    <string name="omitir_foto">Omitir fotografía (zona de alto riesgo autorizada)</string>
+    <string name="hint_justificacion">Justificación de la omisión</string>
+    <string name="accion_capturar_gps">Capturar ubicación GPS</string>
+    <string name="gps_sin_capturar">Ubicación no capturada</string>
+    <string name="gps_buscando">Obteniendo ubicación…</string>
+    <string name="accion_confirmar">Confirmar</string>
+    <string name="accion_cancelar">Cancelar</string>
+    <string name="accion_revisar_registro">Revisar y registrar</string>
+    <string name="confirmar_entrega">¿Confirmar entrega?</string>
+    <string name="confirmar_visita">¿Confirmar visita fallida?</string>
+    <string name="foto_adjunta">adjunta</string>
+    <string name="foto_omitida_riesgo">omitida por zona de alto riesgo</string>
+    <string name="foto_omitida_insegura">omitida por zona insegura</string>
+    <string name="resumen_entrega">Receptor: %1$s (%2$s)\n%3$s: %4$s\nFotografía: %5$s\nGPS: %6$s\n\nEl envío quedará como Entregado.</string>
+    <string name="resumen_visita">Causa: %1$s\nFecha y hora: %2$s\nFotografía: %3$s\nGPS: %4$s\n\nEl envío quedará como Visita fallida.</string>
+
+    <!-- HU-07 -->
+    <string name="titulo_envios_b2b">Envíos de la empresa</string>
+    <string name="hint_buscar_envio">Buscar por código, destinatario o distrito</string>
+    <string name="filtro_estado_todos">Todos</string>
+    <string name="resumen_envios_b2b">%1$d de %2$d envíos</string>
+    <string name="envios_vacios_filtro">No hay envíos que coincidan con la búsqueda o el filtro.</string>
+    <string name="envios_vacios">La empresa no tiene envíos registrados.</string>
+    <string name="titulo_detalle_envio">Detalle de envío</string>
 </resources>

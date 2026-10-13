@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/TarjetaSeccion">
+
+    <LinearLayout style="@style/ContenidoTarjeta">
+
+        <TextView
+            style="@style/TextoSeccion"
+            app:drawableStartCompat="@drawable/ic_camara"
+            android:text="@string/seccion_evidencias" />
+
+        <ImageView
+            android:id="@+id/imagenFoto"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/fondo_recuadro"
+            android:contentDescription="@string/seccion_foto"
+            android:scaleType="fitCenter" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonTomarFoto"
+            style="@style/BotonTonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/accion_tomar_foto"
+            app:icon="@drawable/ic_camara" />
+
+        <LinearLayout
+            android:id="@+id/grupoZonaRiesgo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/interruptorOmitirFoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/omitir_foto" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/contenedorJustificacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_justificacion"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoJustificacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textoUbicacion"
+            style="@style/FilaIcono"
+            android:layout_marginTop="16dp"
+            app:drawableStartCompat="@drawable/ic_ubicacion"
+            android:text="@string/gps_sin_capturar" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonCapturarUbicacion"
+            style="@style/BotonTonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/accion_capturar_gps"
+            app:icon="@drawable/ic_gps" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textoEnvio"
+            style="@style/TextoSeccion"
+            app:drawableStartCompat="@drawable/ic_paquete"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+        <!-- Receptor -->
+        <com.google.android.material.card.MaterialCardView style="@style/TarjetaSeccion">
+
+            <LinearLayout style="@style/ContenidoTarjeta">
+
+                <TextView
+                    style="@style/TextoSeccion"
+                    app:drawableStartCompat="@drawable/ic_persona"
+                    android:text="@string/seccion_receptor" />
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/grupoTipoReceptor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:checkedButton="@id/opcionTitular"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/opcionTitular"
+                        style="@style/BotonContorno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/receptor_titular" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/opcionTercero"
+                        style="@style/BotonContorno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/receptor_tercero" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <TextView
+                    android:id="@+id/textoAutorizados"
+                    style="@style/TextoSecundario"
+                    android:layout_marginTop="8dp" />
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/grupoTipoDocumento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:checkedButton="@id/opcionDni"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/opcionDni"
+                        style="@style/BotonContorno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/documento_dni" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/opcionCe"
+                        style="@style/BotonContorno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/documento_ce" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="@string/hint_numero_documento"
+                    app:startIconDrawable="@drawable/ic_documento">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoDocumento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapCharacters|textNoSuggestions"
+                        android:maxLength="12" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/hint_nombre_receptor"
+                    app:startIconDrawable="@drawable/ic_persona">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/campoNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName|textCapWords"
+                        android:maxLength="80" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Firma -->
+        <com.google.android.material.card.MaterialCardView style="@style/TarjetaSeccion">
+
+            <LinearLayout style="@style/ContenidoTarjeta">
+
+                <TextView
+                    style="@style/TextoSeccion"
+                    app:drawableStartCompat="@drawable/ic_firma"
+                    android:text="@string/seccion_firma" />
+
+                <TextView
+                    style="@style/TextoSecundario"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/firma_instruccion" />
+
+                <com.ampn.inkacourierdelivery.vistas.componentes.VistaFirma
+                    android:id="@+id/vistaFirma"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/fondo_recuadro" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/botonLimpiarFirma"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="@string/accion_limpiar_firma" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <include
+            android:id="@+id/evidencias"
+            layout="@layout/seccion_evidencias" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/accion_revisar_registro"
+            app:icon="@drawable/ic_completado" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

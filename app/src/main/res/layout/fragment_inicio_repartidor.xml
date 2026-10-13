@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <!-- Saludo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo_encabezado"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="64dp">
+
+            <TextView
+                android:id="@+id/textoSaludo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textoSubtitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="@color/blanco_suave" />
+        </LinearLayout>
+
+        <!-- Resumen de la ruta -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="-48dp"
+            app:cardElevation="3dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout style="@style/ContenidoTarjeta">
+
+                <TextView
+                    style="@style/TextoSeccion"
+                    app:drawableStartCompat="@drawable/ic_camion"
+                    android:text="@string/avance_ruta" />
+
+                <TextView
+                    android:id="@+id/textoAvance"
+                    style="@style/TextoSecundario"
+                    android:layout_marginTop="4dp" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/indicadorAvance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:indicatorColor="@color/estado_entregado"
+                    app:trackColor="@color/superficie_alterna"
+                    app:trackCornerRadius="4dp"
+                    app:trackThickness="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginHorizontal="-4dp"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/indicadorPorAtender"
+                        layout="@layout/item_indicador" />
+
+                    <include
+                        android:id="@+id/indicadorEntregadas"
+                        layout="@layout/item_indicador" />
+
+                    <include
+                        android:id="@+id/indicadorFallidas"
+                        layout="@layout/item_indicador" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                style="@style/TituloBloque"
+                android:text="@string/proxima_parada" />
+
+            <include
+                android:id="@+id/proximaParada"
+                layout="@layout/item_envio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="0dp"
+                android:layout_marginVertical="0dp" />
+
+            <TextView
+                android:id="@+id/textoSinProximaParada"
+                style="@style/TextoSecundario"
+                android:text="@string/sin_proxima_parada"
+                android:visibility="gone" />
+
+            <TextView
+                style="@style/TituloBloque"
+                android:text="@string/accesos" />
+
+            <include
+                android:id="@+id/accesoParadas"
+                layout="@layout/item_acceso" />
+
+            <include
+                android:id="@+id/accesoPorAtender"
+                layout="@layout/item_acceso" />
+
+            <include
+                android:id="@+id/accesoAtendidas"
+                layout="@layout/item_acceso" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

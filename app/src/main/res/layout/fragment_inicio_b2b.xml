@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <!-- Saludo y búsqueda -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo_encabezado"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:id="@+id/textoSaludo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textoEmpresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:textAppearance="?attr/textAppearanceTitleSmall"
+                android:textColor="@color/white"
+                app:drawableStartCompat="@drawable/ic_empresa"
+                app:drawableTint="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/inicio_b2b_subtitulo"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="@color/blanco_suave" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/tarjetaBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="14dp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:padding="14dp"
+                    android:text="@string/hint_buscar_envio"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="@color/texto_secundario"
+                    app:drawableStartCompat="@drawable/ic_buscar"
+                    app:drawableTint="@color/texto_secundario" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                style="@style/TituloBloque"
+                android:text="@string/resumen_envios" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="-4dp"
+                android:orientation="horizontal">
+
+                <include
+                    android:id="@+id/indicadorPendiente"
+                    layout="@layout/item_indicador" />
+
+                <include
+                    android:id="@+id/indicadorEnRuta"
+                    layout="@layout/item_indicador" />
+
+                <include
+                    android:id="@+id/indicadorEnCamino"
+                    layout="@layout/item_indicador" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="-4dp"
+                android:orientation="horizontal">
+
+                <include
+                    android:id="@+id/indicadorEntregado"
+                    layout="@layout/item_indicador" />
+
+                <include
+                    android:id="@+id/indicadorVisitaFallida"
+                    layout="@layout/item_indicador" />
+
+                <include
+                    android:id="@+id/indicadorNoVisitado"
+                    layout="@layout/item_indicador" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TituloBloque"
+                android:text="@string/ultimas_actualizaciones" />
+
+            <TextView
+                android:id="@+id/textoSinRecientes"
+                style="@style/TextoSecundario"
+                android:text="@string/sin_envios_recientes"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listaRecientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonVerTodos"
+            style="@style/BotonTonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/accion_ver_todos_envios"
+            app:icon="@drawable/ic_paquete" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

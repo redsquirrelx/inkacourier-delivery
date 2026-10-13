@@ -1,9 +1,39 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.InkaCourierDelivery" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Tema corporativo claro, compartido por modo día y noche. -->
+    <style name="Tema.InkaCourier" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primario</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primario_claro</item>
+        <item name="colorOnPrimaryContainer">@color/primario_oscuro</item>
+        <item name="colorSecondary">@color/primario_oscuro</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/primario_claro</item>
+        <item name="colorOnSecondaryContainer">@color/primario_oscuro</item>
+        <item name="colorError">@color/estado_visita_fallida</item>
+
+        <item name="android:colorBackground">@color/fondo</item>
+        <item name="colorOnBackground">@color/texto_principal</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="colorOnSurface">@color/texto_principal</item>
+        <item name="colorSurfaceVariant">@color/superficie_alterna</item>
+        <item name="colorOnSurfaceVariant">@color/texto_secundario</item>
+        <item name="colorOutline">@color/contorno</item>
+        <item name="colorOutlineVariant">@color/borde</item>
+        <item name="colorSurfaceContainerLowest">@color/superficie</item>
+        <item name="colorSurfaceContainerLow">@color/superficie</item>
+        <item name="colorSurfaceContainer">@color/superficie</item>
+        <item name="colorSurfaceContainerHigh">@color/superficie_alterna</item>
+        <item name="colorSurfaceContainerHighest">@color/superficie_alterna</item>
+
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="materialCardViewStyle">@style/Tarjeta</item>
+        <item name="materialButtonStyle">@style/Boton</item>
+        <item name="textInputStyle">@style/CampoTexto</item>
+        <item name="bottomNavigationStyle">@style/NavegacionInferior</item>
+        <item name="materialAlertDialogTheme">@style/TemaDialogo</item>
     </style>
+
+    <style name="Base.Theme.InkaCourierDelivery" parent="Tema.InkaCourier" />
 
     <style name="Theme.InkaCourierDelivery" parent="Base.Theme.InkaCourierDelivery" />
 </resources>
